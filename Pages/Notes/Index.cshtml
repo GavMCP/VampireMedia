@@ -1,0 +1,48 @@
+﻿@page
+@model VampireMedia.Pages.Notes.IndexModel
+
+@{
+    ViewData["Title"] = "Notes to Self";
+}
+
+<h1>Notes</h1>
+
+<p>
+    <a asp-page="Create">Create New Note</a>
+</p>
+<table class="table" style="color:white">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ListTodoModel[0].Date_Created)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListTodoModel[0].Date_Completed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListTodoModel[0].ItemDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ListTodoModel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Created)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Completed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemDescription)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

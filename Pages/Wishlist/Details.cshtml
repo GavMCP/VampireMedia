@@ -1,0 +1,61 @@
+﻿@page
+@model VampireMedia.Pages.Wishlist.DetailsModel
+
+@{
+    ViewData["Title"] = "Wishlist Details";
+}
+
+<h1>Current Wish Details</h1>
+
+<div>
+    <h4>Current Wishes</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WishlistModel.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WishlistModel.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WishlistModel.YearReleaased)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WishlistModel.YearReleaased)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WishlistModel.LocationSeen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WishlistModel.LocationSeen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WishlistModel.UrlToOnlineLocation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WishlistModel.UrlToOnlineLocation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WishlistModel.Cost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WishlistModel.Cost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WishlistModel.MediaType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WishlistModel.MediaType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WishlistModel.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WishlistModel.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.WishlistModel?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,48 @@
+﻿@page
+@model VampireMedia.Pages.Notes.EditModel
+
+@{
+    ViewData["Title"] = "Edit Notes";
+}
+
+<h1>Edit Notes</h1>
+
+<h4>Current Notes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ListTodoModel.Id" />
+            <div class="form-group">
+                <label asp-for="ListTodoModel.Date_Created" class="control-label"></label>
+                <input asp-for="ListTodoModel.Date_Created" class="form-control" />
+                <hr />
+                <span asp-validation-for="ListTodoModel.Date_Created" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ListTodoModel.Date_Completed" class="control-label"></label>
+                <input asp-for="ListTodoModel.Date_Completed" class="form-control" />
+                <hr />
+                <span asp-validation-for="ListTodoModel.Date_Completed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ListTodoModel.ItemDescription" class="control-label"></label>
+                <input asp-for="ListTodoModel.ItemDescription" class="form-control" />
+                <hr />
+                <span asp-validation-for="ListTodoModel.ItemDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

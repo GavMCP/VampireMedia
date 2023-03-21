@@ -1,0 +1,82 @@
+﻿@page
+@model VampireMedia.Pages.Books.IndexModel
+
+@{
+    ViewData["Title"] = "Vampire Books";
+}
+
+<body style="background-color:black">
+<h1 style="color:crimson">Vampire Books</h1>
+
+
+<p style="color:red">
+    <a asp-page="Create" style="color:crimson">Create New record</a>
+</p>
+<table class="table" style="color:white; background-color:crimson">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BooksModel[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BooksModel[0].Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BooksModel[0].YearPublished)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BooksModel[0].BookType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BooksModel[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BooksModel[0].CoverImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BooksModel[0].Edition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BooksModel[0].Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.BooksModel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearPublished)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoverImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+           
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>

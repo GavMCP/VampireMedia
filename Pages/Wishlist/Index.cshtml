@@ -1,0 +1,72 @@
+﻿@page
+@model VampireMedia.Pages.Wishlist.IndexModel
+
+@{
+    ViewData["Title"] = "Wishlist";
+}
+
+<h1>Current Wishes</h1>
+
+<p>
+    <a asp-page="Create">Create New Wish</a>
+</p>
+<table class="table" style="color:white">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WishlistModel[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WishlistModel[0].YearReleaased)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WishlistModel[0].LocationSeen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WishlistModel[0].UrlToOnlineLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WishlistModel[0].Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WishlistModel[0].MediaType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WishlistModel[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.WishlistModel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearReleaased)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationSeen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlToOnlineLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MediaType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,71 @@
+﻿@page
+@model VampireMedia.Pages.Wishlist.CreateModel
+
+@{
+    ViewData["Title"] = "Create Wish";
+}
+
+<h1>Create a new Wish</h1>
+
+<h4>Add Wish to List</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WishlistModel.Title" class="control-label"></label>
+                <input asp-for="WishlistModel.Title" class="form-control" />
+                <hr />
+                <span asp-validation-for="WishlistModel.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WishlistModel.YearReleaased" class="control-label"></label>
+                <input asp-for="WishlistModel.YearReleaased" class="form-control" />
+                <hr />
+                <span asp-validation-for="WishlistModel.YearReleaased" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WishlistModel.LocationSeen" class="control-label"></label>
+                <input asp-for="WishlistModel.LocationSeen" class="form-control" />
+                <hr />
+                <span asp-validation-for="WishlistModel.LocationSeen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WishlistModel.UrlToOnlineLocation" class="control-label"></label>
+                <input asp-for="WishlistModel.UrlToOnlineLocation" class="form-control" />
+                <hr />
+                <span asp-validation-for="WishlistModel.UrlToOnlineLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WishlistModel.Cost" class="control-label"></label>
+                <input asp-for="WishlistModel.Cost" class="form-control" />
+                <hr />
+                <span asp-validation-for="WishlistModel.Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WishlistModel.MediaType" class="control-label"></label>
+                <input asp-for="WishlistModel.MediaType" class="form-control">
+                <hr />
+                <span asp-validation-for="WishlistModel.MediaType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WishlistModel.Description" class="control-label"></label>
+                <input asp-for="WishlistModel.Description" class="form-control" />
+                <hr />
+                <span asp-validation-for="WishlistModel.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

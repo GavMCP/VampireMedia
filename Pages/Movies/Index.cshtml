@@ -1,0 +1,86 @@
+﻿@page
+@model VampireMedia.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "Vampire Movies";
+}
+
+<body style="background-color:black">
+<h1>Vampire Movies</h1>
+
+<p>
+    <a asp-page="Create" style="color:crimson">Create New Record</a>
+</p>
+<table class="table" style="color:white">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].MediaType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].StarActor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].SupportingActors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].CoverImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Movies) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MediaType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StarActor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupportingActors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoverImage)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
