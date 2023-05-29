@@ -8,6 +8,7 @@ namespace VampireMedia.Models
         [Key]
         public int Id { get; set; }
         public string? Title { get; set; }
+        public string? AlsoKnownAs { get; set; }
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         public string? Director { get; set; }

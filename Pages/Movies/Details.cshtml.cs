@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using VampireMedia.Data;
@@ -12,9 +8,9 @@ namespace VampireMedia.Pages.Movies
 {
     public class DetailsModel : PageModel
     {
-        private readonly VampireMedia.Data.VampireMediaContext _context;
+        private readonly VampireMediaContext _context;
 
-        public DetailsModel(VampireMedia.Data.VampireMediaContext context)
+        public DetailsModel(VampireMediaContext context)
         {
             _context = context;
         }

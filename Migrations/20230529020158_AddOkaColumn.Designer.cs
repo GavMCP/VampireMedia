@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VampireMedia.Data;
 
@@ -11,9 +12,11 @@ using VampireMedia.Data;
 namespace VampireMedia.Migrations
 {
     [DbContext(typeof(VampireMediaContext))]
-    partial class VampireMediaContextModelSnapshot : ModelSnapshot
+    [Migration("20230529020158_AddOkaColumn")]
+    partial class AddOkaColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

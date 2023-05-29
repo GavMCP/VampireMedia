@@ -29,5 +29,13 @@ namespace VampireMedia.Pages.Movies
                 
             }
         }
+
+        public async Task OrderByYear()
+        {
+            if(_context.Movies != null)
+            {
+                Movies = await _context.Movies.OrderBy(x => x.ReleaseDate).ToListAsync();
+            }
+        }
     }
 }
